@@ -1,0 +1,20 @@
+{% extends "student_app/base.html" %}
+
+{% block title %}
+    {{block.super}}
+     Post
+{% endblock title %}
+
+{% block content %}
+    <h2>
+        {{ detail.name }}
+        
+        <small>
+            published {{detail.published|timesince}} ago
+        </small>
+    </h2>
+    <pre>
+        {{ detail.bio }}
+    </pre>
+    <a href="{{ detail.github_url }}">{{ detail.name}}'s Github link</a>
+{% endblock content %}

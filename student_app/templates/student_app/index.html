@@ -1,0 +1,18 @@
+{% extends "student_app/base.html" %}
+
+{% block title %}
+{{ block.super }}
+{% endblock title %}
+
+{% block content %}
+<h1> Student List</h1>
+ <ul class="list_group">
+    {% for detail in details %}
+    <li class="list-group-item">
+        <div class="pull-right">{{ detail.published| date:"m.d.Y"}}</div>
+        <a href="{{detail.get_absolute_url}}">{{ detail.pk }}. {{detail.name}}</a>
+    </li>
+    {% endfor %}
+    </ul>
+
+ {% endblock content %}
